@@ -1,0 +1,9 @@
+--- hxd-0.2.10/src/acctedit/acctedit.c.orig	Wed Feb 26 00:33:17 2003
++++ hxd-0.2.10/src/acctedit/acctedit.c	Wed Feb 26 00:33:29 2003
+@@ -1,5 +1,5 @@
+ #include <sys/types.h>
+-#include <curses.h>
++#include <ncurses/curses.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <errno.h>
