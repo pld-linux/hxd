@@ -5,10 +5,10 @@
 # _with_client                          -build with client
 #
 Summary:	HotlineX (hx) serwer
-Summary(pl):	HotlineX (hx) Server hotline
+Summary(pl):	Serwer HotlineX (hx)
 Name:		hxd
 Version:	0.1.39
-Release:	1
+Release:	2
 License:	GPL
 Group:		Networking/Utilities
 Group(de):	Netzwerkwesen/Werkzeuge
@@ -24,7 +24,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 HotlineX (hx) is an implementation of the Hotline protocol for un*x
 based systems.
 
-%description(pl)
+%description -l pl
 Jest to pakiet pozwalaj±cy na udostêpnianie zasobów hotline pod
 systemami z X w nazwie, BSD te¿ siê licz±.
 
@@ -32,27 +32,29 @@ systemami z X w nazwie, BSD te¿ siê licz±.
 %setup -q 
 
 %build
-CFLAGS="%{rpmcflags}" 
-LDFLAGS="%{rpmldflags}"
+CFLAGS="%{rpmcflags}" \
+LDFLAGS="%{rpmldflags}" \
 ./configure --prefix=%{_prefix} \
-%{!?_without_tracker_registration 	--enable-tracker-register 	\ }
-%{!?_without_tracker_registration 	--enable-exec	 		\ }
-%{?_with_client				--enable-hotline-client		}
+%{!?_without_tracker_registration:	--enable-tracker-register 	} \
+%{!?_without_tracker_registration:	--enable-exec	 		} \
+%{?_with_client:			--enable-hotline-client		}
 # 	--with-socks
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 #install -m755 -d $RPM_BUILD_ROOT%{_datadir}/{bin,man/man1}
-install -m 755 -d $RPM_BUILD_ROOT%{_bindir}/
-install -m 755 hxd $RPM_BUILD_ROOT%{_bindir}/
+install -d $RPM_BUILD_ROOT%{_bindir}
+install hxd $RPM_BUILD_ROOT%{_bindir}
 #install  $RPM_BUILD_ROOT%{_mandir}/man1/
+
+gzip -9nf CHANGES PROBLEMS README*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES PROBLEMS README*
+%doc CHANGES.gz PROBLEMS.gz README*.gz
 %attr(755,root,root) %{_bindir}/*
 #%{_mandir}/man1/*
