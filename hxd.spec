@@ -1,8 +1,8 @@
 #
 # Conditional build:
-# _without_tracker_registration         -build without supporting registration with a tracker
-# _without_find                         -build without suppor for /find & /exec
-# _with_client                          -build with client
+%bcond_without	tracker_registration	# build without supporting registration with a tracker
+%bcond_without	find			# build without suppor for /find & /exec
+%bcond_with	client			# build with client
 #
 Summary:	HotlineX (hx) serwer
 Summary(pl):	Serwer HotlineX (hx)
@@ -15,7 +15,7 @@ Source0:	http://hx.fortyoz.org/%{name}-%{version}.tar.gz
 # Source0-md5:	0fc15f90c6de03740add84b95bc69915
 Patch0:		%{name}-curses.patch
 URL:		http://hx.fortyoz.org/
-%{?_with_client:BuildRequires:	libreadline-devel}
+%{?with_client:BuildRequires:	libreadline-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,9 +35,9 @@ systemami z X w nazwie, BSD te¿ siê licz±.
 CFLAGS="%{rpmcflags}" \
 LDFLAGS="%{rpmldflags}" \
 ./configure --prefix=%{_prefix} \
-%{!?_without_tracker_registration:	--enable-tracker-register 	} \
-%{!?_without_tracker_registration:	--enable-exec	 		} \
-%{?_with_client:			--enable-hotline-client		}
+%{?with_tracker_registration:	--enable-tracker-register 	} \
+%{?with_tracker_registration:	--enable-exec	 		} \
+%{?with_client:			--enable-hotline-client		}
 # 	--with-socks
 %{__make}
 
