@@ -54,4 +54,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog AUTHORS INSTALL NEWS PROBLEMS README*
 %attr(755,root,root) %{_bindir}/*
-#%{_mandir}/man1/*
+#%%{_mandir}/man1/*
