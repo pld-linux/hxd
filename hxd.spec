@@ -7,12 +7,12 @@
 Summary:	HotlineX (hx) serwer
 Summary(pl):	Serwer HotlineX (hx)
 Name:		hxd
-Version:	0.2.10
+Version:	0.2.18
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
 Source0:	http://hx.fortyoz.org/%{name}-%{version}.tar.gz
-# Source0-md5:	d9eb9d0ca448d660bbe5e778dc3979e0
+# Source0-md5:	0fc15f90c6de03740add84b95bc69915
 Patch0:		%{name}-curses.patch
 URL:		http://hx.fortyoz.org/
 %{?_with_client:BuildRequires:        libreadline-devel}
