@@ -12,6 +12,7 @@ Release:	1
 License:	GPL
 Group:		Networking/Utilities
 Source0:	http://hx.fortyoz.org/%{name}-%{version}.tar.gz
+# Source0-md5:	d9eb9d0ca448d660bbe5e778dc3979e0
 Patch0:		%{name}-curses.patch
 URL:		http://hx.fortyoz.org/
 %{?_with_client:BuildRequires:        libreadline-devel}
