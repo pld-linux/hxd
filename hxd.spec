@@ -44,14 +44,11 @@ install -d $RPM_BUILD_ROOT%{_bindir}
 install src/hxd/hxd $RPM_BUILD_ROOT%{_bindir}
 #install  $RPM_BUILD_ROOT%{_mandir}/man1/
 
-gzip -9nf ChangeLog AUTHORS INSTALL NEWS PROBLEMS README*
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog.gz AUTHORS.gz INSTALL.gz
-%doc NEWS.gz PROBLEMS.gz README*.gz
+%doc ChangeLog AUTHORS INSTALL NEWS PROBLEMS README*
 %attr(755,root,root) %{_bindir}/*
 #%{_mandir}/man1/*
