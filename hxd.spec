@@ -11,10 +11,6 @@ Version:	0.2.4
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
-Group(de):	Netzwerkwesen/Werkzeuge
-Group(es):	Red/Utilitarios
-Group(pl):	Sieciowe/Narzêdzia
-Group(pt_BR):	Rede/Utilitários
 Source0:	http://hx.fortyoz.org/%{name}-%{version}.tar.gz
 URL:		http://hx.fortyoz.org/
 %{?_with_client:BuildRequires:        libreadline-devel}
