@@ -15,7 +15,7 @@ Source0:	http://hx.fortyoz.org/%{name}-%{version}.tar.gz
 # Source0-md5:	0fc15f90c6de03740add84b95bc69915
 Patch0:		%{name}-curses.patch
 URL:		http://hx.fortyoz.org/
-%{?_with_client:BuildRequires:        libreadline-devel}
+%{?_with_client:BuildRequires:	libreadline-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
