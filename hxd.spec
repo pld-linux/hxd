@@ -7,8 +7,8 @@
 Summary:	HotlineX (hx) serwer
 Summary(pl):	Serwer HotlineX (hx)
 Name:		hxd
-Version:	0.1.39
-Release:	2
+Version:	0.2.4
+Release:	1
 License:	GPL
 Group:		Networking/Utilities
 Group(de):	Netzwerkwesen/Werkzeuge
@@ -45,16 +45,17 @@ LDFLAGS="%{rpmldflags}" \
 rm -rf $RPM_BUILD_ROOT
 #install -m755 -d $RPM_BUILD_ROOT%{_datadir}/{bin,man/man1}
 install -d $RPM_BUILD_ROOT%{_bindir}
-install hxd $RPM_BUILD_ROOT%{_bindir}
+install src/hxd/hxd $RPM_BUILD_ROOT%{_bindir}
 #install  $RPM_BUILD_ROOT%{_mandir}/man1/
 
-gzip -9nf CHANGES PROBLEMS README*
+gzip -9nf ChangeLog AUTHORS INSTALL COPYING NEWS PROBLEMS README*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES.gz PROBLEMS.gz README*.gz
+%doc ChangeLog.gz AUTHORS.gz INSTALL.gz COPYING.gz 
+%doc NEWS.gz PROBLEMS.gz README*.gz
 %attr(755,root,root) %{_bindir}/*
 #%{_mandir}/man1/*
