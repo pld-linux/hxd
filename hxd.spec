@@ -1,8 +1,9 @@
+#
 # Conditional build:
 # _without_tracker_registration         -build without supporting registration with a tracker
 # _without_find                         -build without suppor for /find & /exec
 # _with_client                          -build with client
-
+#
 Summary:	HotlineX (hx) serwer
 Summary(pl):	HotlineX (hx) Server hotline
 Name:		hxd
@@ -11,7 +12,9 @@ Release:	1
 License:	GPL
 Group:		Networking/Utilities
 Group(de):	Netzwerkwesen/Werkzeuge
+Group(es):	Red/Utilitarios
 Group(pl):	Sieciowe/Narzêdzia
+Group(pt_BR):	Rede/Utilitários
 Source0:	http://hx.fortyoz.org/%{name}-%{version}.tar.gz
 URL:		http://hx.fortyoz.org/
 %{?_with_client:BuildRequires:        libreadline-devel}
@@ -26,13 +29,11 @@ Jest to pakiet pozwalaj±cy na udostêpnianie zasobów hotline pod
 systemami z X w nazwie, BSD te¿ siê licz±.
 
 %prep
-rm -rf $RPM_BUILD_ROOT
-
 %setup -q 
 
 %build
 CFLAGS="%{rpmcflags}" 
-LDFLAGS=%{rpmldflags} 
+LDFLAGS="%{rpmldflags}"
 ./configure --prefix=%{_prefix} \
 %{!?_without_tracker_registration 	--enable-tracker-register 	\ }
 %{!?_without_tracker_registration 	--enable-exec	 		\ }
