@@ -1,9 +1,14 @@
---- hxd-0.2.10/src/acctedit/acctedit.c.orig	Wed Feb 26 00:33:17 2003
-+++ hxd-0.2.10/src/acctedit/acctedit.c	Wed Feb 26 00:33:29 2003
-@@ -1,5 +1,5 @@
- #include <sys/types.h>
+--- hxd-0.2.18/src/acctedit/acctedit.c.orig	Tue Jul 15 15:08:39 2003
++++ hxd-0.2.18/src/acctedit/acctedit.c	Tue Jul 15 15:07:21 2003
+@@ -3,9 +3,9 @@
+ #include "config.h"
+ #endif
+ #if defined(HAVE_NCURSES_H)
+-#include <ncurses.h>
++#include <ncurses/ncurses.h>
+ #else
 -#include <curses.h>
 +#include <ncurses/curses.h>
+ #endif
  #include <unistd.h>
  #include <fcntl.h>
- #include <errno.h>
