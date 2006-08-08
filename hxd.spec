@@ -29,7 +29,7 @@ systemami z X w nazwie, BSD te¿ siê licz±.
 %prep
 %setup -q
 
-%patch -p1
+%patch0 -p1
 
 %build
 CFLAGS="%{rpmcflags}" \
