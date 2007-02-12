@@ -5,7 +5,7 @@
 %bcond_with	client			# build with client
 #
 Summary:	HotlineX (hx) serwer
-Summary(pl):	Serwer HotlineX (hx)
+Summary(pl.UTF-8):   Serwer HotlineX (hx)
 Name:		hxd
 Version:	0.2.18
 Release:	1
@@ -22,9 +22,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 HotlineX (hx) is an implementation of the Hotline protocol for un*x
 based systems.
 
-%description -l pl
-Jest to pakiet pozwalaj±cy na udostêpnianie zasobów hotline pod
-systemami z X w nazwie, BSD te¿ siê licz±.
+%description -l pl.UTF-8
+Jest to pakiet pozwalajÄ…cy na udostÄ™pnianie zasobÃ³w hotline pod
+systemami z X w nazwie, BSD teÅ¼ siÄ™ liczÄ….
 
 %prep
 %setup -q
