@@ -5,7 +5,7 @@
 %bcond_with	client			# build with client
 #
 Summary:	HotlineX (hx) serwer
-Summary(pl.UTF-8):   Serwer HotlineX (hx)
+Summary(pl.UTF-8):	Serwer HotlineX (hx)
 Name:		hxd
 Version:	0.2.18
 Release:	1
